@@ -26,9 +26,15 @@ million records among which Credit card frauds were the most common reported for
 with 133,015 reports followed by employment or tax-related fraud with 82,051 reports, phone 
 fraud with 55045 cases and bank fraud with 5,517 reports as per report released by FTC[6]
 
+![Taxonomy of Fraud](https://user-images.githubusercontent.com/84242964/138570136-82d0f20b-cc71-4bc9-a9f5-a2b06e965d7c.png)
+Fig 2.1 Taxonomy of Fraud
+
 According to the US Forum report in 2017, most of the crims on credit cards are related to CNP 
 transactions i.e. Credit cards are not present as the security of chip cards have increased. The 
-below fig 2.2 shows CNP fraud occurred in each Year.  
+below fig 2.2 shows CNP fraud occurred in each Year. 
+
+![CVP Frauds](https://user-images.githubusercontent.com/84242964/138570175-6b159ed8-fc83-4ea8-8e07-35525d704389.png)
+Fig 2.2 CNP Frauds
 
 For implementing this project Multiple Supervised learning techniques are used. Various 
 challenges faced during working with the data set that was obtained through kaggle. These are: <br />
@@ -58,6 +64,10 @@ ways. These variables cause a high imbalance in data. The main aim of our projec
 the problem of Concept drift to implement in the real-world scenario. Table 3.1, [1] shows basic 
 features that are captured when any transaction is made.
 
+
+![features of credit card transaction](https://user-images.githubusercontent.com/84242964/138570186-147dc052-844e-4abc-b346-b6d3c60474a8.png)
+Table 3.1 Features of credit card transaction.
+
 # 3.1 Data Presentation:
 ● The dataset[7] contains transactions made by credit cards in September 2013 by 
 european cardholders. 
@@ -82,7 +92,7 @@ Table 3.2 Credit card dataset description
 To get more in-depth intuition on the dataset we can refer below correlation heatmap as shown 
 in fig 3.1. As it can be seen from fig 3.1, it clearly shows that variable class is independent on the time and amount but it has dependency on the PCA computed variables.
 
-
+![Correlation heatmap](https://user-images.githubusercontent.com/84242964/138570201-519a8870-9963-469a-bee2-9571bfe9bdb4.png)
 Fig 3.1 Correlation heatmap
 
 
@@ -103,34 +113,34 @@ Method that is used for feature extraction of fraudulent and non-fraudulent tran
 Our own modified Algorithm to derive aggregated transaction details and to extract card holder 
 features using sliding window technique[1].
 
-Algorithm:
-L = nrow(data_set)
-Genuine =null
-Fraud =null
-For i in range (0 to l-w+1):
-T =,null
-#For sliding window feature
-For j in range (i, i+w-1):
-a= data_set[i,]
-T = rbind(t, a)
-Endfor
+Algorithm:<br />
+L = nrow(data_set)<br />
+Genuine =null<br />
+Fraud =null<br />
+For i in range (0 to l-w+1):<br />
+T =null<br />
+#For sliding window feature<br />
+For j in range (i, i+w-1):<br />
+a= data_set[i,]<br />
+T = rbind(t, a)<br />
+Endfor<br />
 # extracting features in the window ‘w’
-a1= max(data_set$amount)
-a2= min(data_set$amount)
-a3= avg(data_set$amount)
-For j in range(i+w-1):
-xi = data_set$time(tj)- data_set$time(tj-1)
-Endfor
-X = append(a1,a2,a3,a4)
-Y= LABEL(Ti)
+a1= max(data_set$amount)<br />
+a2= min(data_set$amount)<br />
+a3= avg(data_set$amount)<br />
+For j in range(i+w-1):<br />
+xi = data_set$time(tj)- data_set$time(tj-1)<br />
+Endfor<br />
+X = append(a1,a2,a3,a4)<br />
+Y= LABEL(Ti)<br />
 # Classifying transactions into fraud or not
-If Yi =0 then
-Genuine= rbind(genuine, X)
-Else:
-Fraud = rbind(fraud,X) 
-Endfor
-Input : Sequence of transactions T, window size w and id of a customer holding a card
-Output: Extracted features of genuine or fraud transactions.
+If Yi =0 then<br />
+Genuine= rbind(genuine, X)<br />
+Else:<br />
+Fraud = rbind(fraud,X) <br />
+Endfor<br />
+Input : Sequence of transactions T, window size w and id of a customer holding a card<br />
+Output: Extracted features of genuine or fraud transactions.<br />
 
 In the sliding window method during each loop iteration features are extracted for each 
 transaction in the window size ‘w’ and stored based on the behavioural pattern of each group. 
@@ -142,29 +152,31 @@ the classifiers do not work well on the dataset.
 Before balancing the dataset we perform exploratory data analysis in which we check density 
 plot of amount and time features.
 
-
+![Density plot of Time](https://user-images.githubusercontent.com/84242964/138570230-f5219b63-a577-466e-888f-0124519d00e5.png)
 Fig 4.1 Density plot of Time
+
 It can be seen from fig 4.1 that less transactions were made during night and more during day.
 
-
+![Density plot of amount](https://user-images.githubusercontent.com/84242964/138570222-f9276138-ec80-4d6c-aa44-0578891c3af2.png)
 Fig 4.2 Density plot of amount
 It can be seen from fig 4.2 that the majority of transactions are relatively small and only a handful 
 of them come close to actual amounts. Then we scale parameter such amount and time and 
 proceed to balancing the unbalanced dataset as shown in the below fig 4.3 and 4.4.
 
-
+![Unbalanced data set](https://user-images.githubusercontent.com/84242964/138570240-1d62fd1c-4830-4b0b-b6dc-fc5fe22a02e9.png)
 Fig 4.3 Unbalanced data set
 For solving this problem, we balance the data set with equal count fraud and non-fraud 
 transactions as shown in fig 4.2.
 
-
+![Balanced data set](https://user-images.githubusercontent.com/84242964/138570245-32393a5d-10d8-469d-a96e-b0647f8da590.png)
 Fig 4.4 Balanced data set
 On this balanced dataset we perform various Machine learning algorithms such as Logistic 
 regression, Discriminant analysis, KNN, Neural network, Decision tree, Gradient boosting and 
 compare their performance, which can be seen in table 4.1 below:
 
-
+![Accuracy table](https://user-images.githubusercontent.com/84242964/138570251-df61ed38-3b84-48a7-95bc-42f85efd4bd1.png)
 Table 4.1 Accuracy Table
+
 Implementation of the above mentioned algorithms can be found in 
 credit_card_fraud_project.Rmd File where each step has been implemented and executed from 
 scratch to output the result in table 4.1.
@@ -201,7 +213,7 @@ memory limit constraints LOC cannot be executed.
 
 # 5. Results and Analysis
 
-
+![Barplot comparision](https://user-images.githubusercontent.com/84242964/138570266-f735ad74-7dc6-468b-90ff-286a48a90500.png)
 Fig 5.1 Barplot comparison
 
 
@@ -212,7 +224,7 @@ close to 97 percent, which can be further improved by ensemble learning techniqu
 as use of multiple treesto predict the outcome, Random forests in general perform better 
 than a single decision tree as they manage to reduce both bias and variance.
 
-
+![5 1 Accuracy Table](https://user-images.githubusercontent.com/84242964/138570277-2cf4b078-0e87-4d9d-b469-d80e1e5d3160.png)
 Table 5.1 Accuracy Table
 Accuracy of Neural networks can be further improved by tuning its hyper parameters such as 
 adding more hidden layers, neurons, changing activation function and deep learning for auto 
