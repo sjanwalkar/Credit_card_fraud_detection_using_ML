@@ -171,13 +171,13 @@ scratch to output the result in table 4.1.
 After comparing various algorithms, we finally perform One of the newest techniques to detect 
 anomalies is called Isolation Forests. The algorithm is based on the fact that anomalies are data 
 points that are few and different. As a result of these properties, anomalies are susceptible to a 
-mechanism called isolation.
+mechanism called isolation. <br />
 This method is highly useful and is fundamentally different from all existing methods. It 
 introduces the use of isolation as a more effective and efficient means to detect anomalies than 
 the commonly used basic distance and density measures. Moreover, this method is an algorithm 
 with a low linear time complexity and a small memory requirement. It builds a good performing 
 model with a small number of trees using small sub-samples of fixed size, regardless of the size 
-of a data set.
+of a data set. <br />
 Typical machine learning methods tend to work better when the patterns they try to learn are 
 balanced, meaning the same amount of good and bad behaviors are present in the dataset.
 How Isolation Forests Work The Isolation Forest algorithm isolates observations by randomly 
@@ -186,11 +186,11 @@ minimum values of the selected feature. The logic argument goes: isolating anoma
 observations is easier because only a few conditions are needed to separate those cases from 
 the normal observations. On the other hand, isolating normal observations requires more 
 conditions. Therefore, an anomaly score can be calculated as the number of conditions required 
-to separate a given observation.
+to separate a given observation. <br />
 The way that the algorithm constructs the separation is by first creating isolation trees, or random 
 decision trees. Then, the score is calculated as the path length to isolate the observation. As it 
 can be seen from table 3 Isolation forest gives us a very high accuracy of 99.5 % even for highly 
-unbalanced dataset.
+unbalanced dataset. <br />
 Another algorithm that can give high accuracy is the local outlier factor, it is an unsupervised 
 outlier detection method which computes the local density deviation of a given data point with 
 respect to its neighbors. It is considered as outlier samples that have a substantially lower density 
@@ -226,26 +226,26 @@ Credit card fraud is without a doubt an act of criminal dishonesty and Finding o
 transactions is not an easy problem. It needs very organized planning before implementing the 
 machine learning algorithms directly. It is also an application of business analytics, data science 
 and machine learning which makes sure that the money spent by the customer is secure and not 
-easily tampered with. 
+easily tampered with.  <br />
 This project explains in detail, how machine learning can be applied to get better results in fraud 
 detection along with the algorithm, pseudocode, explanation of its implementation and 
-experimentation results.
+experimentation results. <br />
 Since the entire dataset consists of only two days transaction records, it's only a fraction of data 
 that can be made available if this project were to be used on a commercial scale. Being based on 
 machine learning algorithms, the program will only increase its efficiency over the time as more 
-data is put into it
+data is put into it. <br />
 
 
 # 7. Bibliography
 [1]Jiang, Changjun et al. “Credit Card Fraud Detection: A Novel Approach Using Aggregation 
-Strategy and Feedback Mechanism.” IEEE Internet of Things Journal 5 (2018): 3637-3647.
+Strategy and Feedback Mechanism.” IEEE Internet of Things Journal 5 (2018): 3637-3647. <br />
 [2]Pumsirirat, A. and Yan, L. (2018). Credit Card Fraud Detection using Deep Learning based on 
 Auto-Encoder and Restricted Boltzmann Machine. International Journal of Advanced Computer 
-Science and Applications, 9(1).
+Science and Applications, 9(1). <br />
 [3]Mohammed, Emad, and Behrouz Far. “Supervised Machine Learning Algorithms for Credit 
 Card Fraudulent Transaction Detection: A Comparative Study.” IEEE Annals of the History of 
-Computing, IEEE, 1 July 2018, doi.ieeecomputersociety.org/10.1109/IRI.2018.00025.
-[4]https://papers.nips.cc/paper/2020/file/1959eb9d5a0f7ebc58ebde81d5df400d-Paper.pdf
-[5]https://www.sciencedirect.com/science/article/pii/S187705092030065X
-[6]https://www.ftc.gov/news-events/press-releases/2019/02/imposter-scams-top-complaintsmade-ftc-2018
-[7]https://www.kaggle.com/mlg-ulb/creditcardfraud
+Computing, IEEE, 1 July 2018, doi.ieeecomputersociety.org/10.1109/IRI.2018.00025. <br />
+[4]https://papers.nips.cc/paper/2020/file/1959eb9d5a0f7ebc58ebde81d5df400d-Paper.pdf <br />
+[5]https://www.sciencedirect.com/science/article/pii/S187705092030065X <br />
+[6]https://www.ftc.gov/news-events/press-releases/2019/02/imposter-scams-top-complaintsmade-ftc-2018 <br />
+[7]https://www.kaggle.com/mlg-ulb/creditcardfraud <br />
