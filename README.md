@@ -1,4 +1,4 @@
-# Credit_card_fraud_detection_using_ML-Rstudio
+# Credit_card_fraud_detection_using_ML
 This project explains in detail, how machine learning can be applied to get better results in fraud detection along with the algorithm, pseudocode, explanation of its implementation and experimentation results
 
 # 1. Abstract
